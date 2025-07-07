@@ -60,6 +60,7 @@ useEffect(() => {
         }
       );
       toast.success("Video uploaded successfully");
+      console.log(thumbnail)
       navigate("/admin/dashboard");
     } catch (e) {
       toast.error("Failed to upload video");

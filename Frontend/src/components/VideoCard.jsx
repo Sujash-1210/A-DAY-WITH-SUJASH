@@ -3,14 +3,12 @@ import { useNavigate } from 'react-router-dom';
 
 const VideoCard = ({ video }) => {
   const navigate = useNavigate();
-  const str = video.thumbnailUrl;
-  const newStr = str.replace(/\\/g, "/");
 
   return (
     <div className="bg-white shadow-lg rounded-lg overflow-hidden border border-light-gray hover:shadow-xl transition duration-300">
       <div className="aspect-w-16 aspect-h-9">
   <img
-    src={`${import.meta.env.VITE_BACKEND_URL}/${newStr}`}
+    src={video.thumbnailUrl}
     alt={video.title}
     className="w-full h-full object-cover"
   />
