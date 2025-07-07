@@ -32,7 +32,7 @@ const About = () => {
             scenic travel spots, and much more! My channel <strong className="text-secondary-gold">"A Day with Sujash"</strong> is where I share my journeys with the world.
           </p>
           <p>
-            With over <strong>4100+ subscribers</strong>, I aim to make you feel part of every journey — from 
+            With over <strong>4000+ subscribers</strong>, I aim to make you feel part of every journey — from 
             <span className="text-accent-burnt"> different festival </span> celebrations to peaceful temple visits and hidden travel gems of our Bengal!
           </p>
           <p>
@@ -44,7 +44,7 @@ const About = () => {
             <a href="https://www.youtube.com/@adaywithsujash" target="_blank" rel="noopener noreferrer" title="YouTube">
               <Youtube className="text-secondary-gold hover:text-red-600 transition" />
             </a>
-            <a href="mailto:adaywith@gmail.com" title="Email">
+            <a href="mailto:adaywithsujash@gmail.com" title="Email">
               <Mail className="text-secondary-gold hover:text-blue-600 transition" />
             </a>
             <a href="https://www.facebook.com/profile.php?id=61569631767184" target="_blank" rel="noopener noreferrer" title="Facebook">
