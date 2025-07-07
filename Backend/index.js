@@ -6,13 +6,17 @@ import adminVideoRoutes from './routes/admin/adminVideoRoutes.js'
 import userVideoRoutes from './routes/user/userVideoRoutes.js'
 import adminAuthRoutes from './routes/admin/adminAuthRoutes.js'
 import userContactRoutes from './routes/user/userContactRoutes.js'
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
+
+// Set up the uploads directory path
+const uploadsDir = path.join(__dirname, 'uploads');
 
 dotenv.config()
 const app = express()
 app.use(cors())
 await connectDB()
 app.use(express.json())
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/uploads', express.static(uploadsDir));
 
 app.use('/admin',adminVideoRoutes)
 app.use('/admin',adminAuthRoutes)
