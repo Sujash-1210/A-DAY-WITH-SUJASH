@@ -30,16 +30,13 @@ const VideoDetails = () => {
       </div>
     );
 
-  const str = video.thumbnailUrl;
-  const newStr = str.replace(/\\/g, '/');
-
   return (
     <div className="min-h-screen bg-bg-parchment py-10 px-4 sm:px-8">
       <div className="max-w-4xl mx-auto bg-white shadow-md rounded-lg overflow-hidden">
         {/* Image with 16:9 aspect ratio */}
         <div className="aspect-w-16 aspect-h-9">
           <img
-            src={`${import.meta.env.VITE_BACKEND_URL}/${newStr}`}
+            src={video.thumbnailUrl}
             alt={video.title}
             className="w-full h-full object-cover"
           />
