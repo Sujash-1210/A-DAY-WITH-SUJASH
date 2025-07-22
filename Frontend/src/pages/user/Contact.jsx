@@ -31,7 +31,7 @@ const Contact = () => {
       
       {/* Header */}
       <div className="mb-10 text-center">
-        <h1 className="text-3xl font-bold text-primary-dark mb-2">Get in Touch</h1>
+        <h1 className="text-3xl font-semibold text-primary-dark mb-2">Get in Touch</h1>
         <p className="text-gray-700">We’d love to hear from you! Fill out the form below or reach us on social media.</p>
       </div>
 

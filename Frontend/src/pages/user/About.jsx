@@ -26,13 +26,13 @@ const About = () => {
 
         {/* Bio */}
         <div className="flex-1 space-y-4 text-center md:text-left">
-          <h2 className="text-2xl font-medium text-primary-dark">Hi, I'm Sujash 👋</h2>
+          <h2 className="text-xl font-medium text-primary-dark">Hi, I'm Sujash 👋</h2>
           <p>
             I'm a passionate vlogger from Kolkata who loves exploring cultural festivals, spiritual temples,
             scenic travel spots, and much more! My channel <strong className="text-secondary-gold">"A Day with Sujash"</strong> is where I share my journeys with the world.
           </p>
           <p>
-            With over <strong>4000+ subscribers</strong>, I aim to make you feel part of every journey — from 
+            With over <strong>4100+ subscribers</strong>, I aim to make you feel part of every journey — from 
             <span className="text-accent-burnt"> different festival </span> celebrations to peaceful temple visits and hidden travel gems of our Bengal!
           </p>
           <p>

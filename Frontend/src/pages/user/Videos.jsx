@@ -8,6 +8,7 @@ const categories = ['latest', 'travel', 'festival', 'temples', 'popular videos',
 const Videos = () => {
   const [videos, setVideos] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('latest');
+  const [loading,setLoading] = useState(true)
 
   const fetchVideos = async () => {
     try {
@@ -15,6 +16,8 @@ const Videos = () => {
       setVideos(response.data);
     } catch (e) {
       toast.error('Failed to load videos!');
+    }finally{
+      setLoading(false)
     }
   };
 
@@ -52,14 +55,14 @@ const Videos = () => {
             ))}
           </div>
         </aside>
-
+        
         {/* Videos Grid */}
         <section className="flex-1">
-          <h2 className="text-2xl font-bold text-primary-dark mb-6 capitalize">
-            {selectedCategory} Videos
+          <h2 className="text-2xl font-medium text-primary-dark mb-6 capitalize">
+            {selectedCategory === 'popular videos' ? 'Popular' : selectedCategory} Videos
           </h2>
-          {filteredVideos.length === 0 ? (
-            <p className="text-gray-500 text-center">No videos available.</p>
+          {loading ? (
+            <p className="text-gray-500 text-center">Loading..</p>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
               {filteredVideos.map((video) => (

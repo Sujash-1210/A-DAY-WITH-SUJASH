@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Youtube, Instagram, Facebook, Mail } from 'lucide-react';
 import VideoCard from '../../components/VideoCard.jsx';
-import illustration from '../../assets/bengali-culture2.jpg'; // Replace with your own SVG
+import illustration from '../../assets/bengali-culture2.jpg';
+
 
 const Home = () => {
   const [latestVideos, setLatestVideos] = useState([]);
+  const [loading,setLoading] = useState(true)
 
   const fetchLatestVideos = async () => {
     try {
@@ -14,6 +16,9 @@ const Home = () => {
       setLatestVideos(res.data.slice(0, 5));
     } catch (error) {
       console.error('Failed to fetch videos:', error);
+    }
+    finally{
+      setLoading(false)
     }
   };
 
@@ -75,8 +80,8 @@ const Home = () => {
           </div>
         </div>
 
-        {latestVideos.length === 0 ? (
-          <p className="text-center text-gray-500">No videos uploaded yet.</p>
+        {loading ? (
+          <p className="text-center text-gray-500">Loading... </p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {latestVideos.map((video) => (
@@ -125,7 +130,7 @@ const Home = () => {
 
       {/* Newsletter Subscription */}
       <section className="bg-bg-parchment text-primary-dark px-6 sm:px-12 py-12">
-        <h2 className="text-2xl font-bold mb-4 text-center">Stay Updated</h2>
+        <h2 className="text-2xl font-medium mb-4 text-center">Stay Updated</h2>
         <p className="text-lg mb-6 text-center">Subscribe to our newsletter for the latest updates, vlogs, and more!</p>
         <div className="flex justify-center">
           <input
